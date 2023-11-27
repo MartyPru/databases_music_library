@@ -25,4 +25,4 @@ Shows easy-to-read string
 """
 def test_str_formatting():
     album_1 = Album(1, 'Voyage', 2021, 2)
-    assert str(album_1) == 'Album(Voyage, 2021, 2)'
+    assert str(album_1) == 'Album(1, Voyage, 2021, 2)'

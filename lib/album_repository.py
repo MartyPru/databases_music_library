@@ -5,7 +5,7 @@ class AlbumRepository():
         self.connection = connection
 
     def all(self):
-        rows = self.connection.execute('SELECT * FROM albums')
+        rows = self.connection.execute('SELECT * FROM albums;')
         albums = []
         for row in rows:
             album = Album(row['id'], row['title'], row['release_year'], row['artist_id'])
