@@ -22,3 +22,13 @@ def test_returns_list_of_albums(db_connection):
         Album(11, 'Fodder on My Wings', 1982, 4),
         Album(12, 'Ring Ring', 1973, 2)
     ]
+
+"""
+When calling #find with an item id on instance of repository
+Returns result matching id
+"""
+def test_find_returns_matching_element(db_connection):
+    db_connection.seed('seeds/music_library.sql')
+    repo = AlbumRepository(db_connection)
+    matching_album = repo.find(1)
+    assert matching_album == Album(1, 'Doolittle', 1989, 1)

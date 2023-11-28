@@ -25,3 +25,7 @@ albums = album_repo.all()
 # Print all albumss
 for album in albums:
     print(album)
+
+# Retrieve and print album with id '1'
+matching_album = album_repo.find(1)
+print(matching_album)
