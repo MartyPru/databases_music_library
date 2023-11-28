@@ -12,7 +12,7 @@ class AlbumRepository():
             albums.append(album)
         return albums
 
-    def find(self, id):
-        matching_result = self.connection.execute(f'SELECT * FROM albums WHERE id = {id};')[0]
+    def find(self, artist_id):
+        matching_result = self.connection.execute('SELECT * FROM albums WHERE id = %s;', [artist_id])[0]
         matching_object = Album(matching_result['id'], matching_result['title'], matching_result['release_year'], matching_result['artist_id'])
         return matching_object
